@@ -4,7 +4,7 @@ let action = "";
 
 while (true) {
   action = prompt("What do you want to do? 'signup', 'login', 'change password', or 'exit' ");
-
+// 1
   if (action === 'exit') {
     alert("bye");
     break;
@@ -16,7 +16,7 @@ while (true) {
     alert("dkhl chi haja s7i7a");
   }
 }
-
+// 2
 if (action === 'signup') {
   let name;
   while (true) {
@@ -103,7 +103,7 @@ continue;
   console.log(users);
 }
 action = prompt("What do you want to do? 'signup', 'login', 'change password', or 'exit' ");
-
+// 
 if (action == 'login') {
     let emaill ;
     let passwordd;
@@ -119,3 +119,23 @@ if (action == 'login') {
     }
     let changePass = prompt("ghiti tbdl password");
 }
+// 3
+ if (action === "change password") {
+        let email = prompt("ktb email dylk:");
+
+        let user = users.find(dswwsdw => dswwsdw.email === email);
+
+        if (! user)
+            {
+            alert("email dylk machi shih");
+        }
+        else
+        {
+            let newPassword = prompt("ktb password dylk:");
+            user.password = newPassword;
+            alert("Password li bdlti daz");
+        }
+    }
+    else{
+        alert("3awd mra khra");
+    }
