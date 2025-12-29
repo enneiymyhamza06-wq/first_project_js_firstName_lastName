@@ -12,46 +12,75 @@ while (true) {
 
   if (action === 'signup' || action === 'login' || action === 'change password') {
     break;
-  } 
-  else{
+  } else {
     alert("dkhl chi haja s7i7a");
   }
 }
 
 if (action === 'signup') {
-  let name = prompt("dkhl fullnnName");
-  name = name.trim().toLowerCase() + name.slice(1,1)
-  name = name.replace(/(^|\s)\S/g, match => match.toUpperCase());
-  let y = true
+  let name;
   while (true) {
-   
-         let name = prompt("3awd dkhl fullName");
-         if (name == "/^[a-zA-Z_]+$/") {
-             let name = prompt("3awd");
+    name = prompt("dkhl fullName").trim();
+    if (name.length < 5) { 
+alert("name khaso ykoun kbir mn 5 caracter");
+ continue; }
+    if (!/^[a-zA-Z ]+$/.test(name)){
+             alert("name ma fihch'a-zA-Z'")
+             continue;
+             }
+    name = name.toLowerCase().replace(/(^|\s)\S/g, match => match.toUpperCase());
+    break;
+  }
+
+  let email;
+  while (true) {
+    email = prompt("dkhl email").trim().toLowerCase();
+    if (email.includes(" ")) { 
+        alert("email ma fihch ipace")
+         continue;
+     }
+    if (email.length < 10) {
+         alert("email khaso ykoun >= 10 caractères")
+
+         continue;
          }
-        if (name.length > 5) {
-            false
-            break
+    if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) { 
+        alert("email khaso ykoun fih @ wahed ghir")
+        continue; 
+    }
+    if (users.find(u => u.email === email)) {
+         alert("email deja kayn")
+         continue 
         }
+    break;
   }
 
-  let email = prompt("dkhl email").trim().toLowerCase();
-if (email == email.includes(" ")) {
-    email = prompt("dkhl email 3awtani").trim().toLowerCase()
+  let password;
+  while (true) {
+    password = prompt("dkhl password");
+    if (password.includes(" ")) 
+{ 
+alert("Password ma fihch spaces")
+continue;
+ }
+    if (password.length < 7) { 
+        alert("Password khaso >= 7 lettres")
+        continue;
+     }
+    if (!/[@#\-\+\*\/]/.test(password))  { alert("Password khaso ykoun fih character spisial")
+         continue;
+         }
+    break;
+  }
+  users.push({ name, 
+    email, 
+    password,
+   balance:0,
+    history:[]  
 }
-if (email.length < 10 ) {
-    alert("email dylk na9s 9al mn 10 caracter")
-  }
-
-  let password = prompt("dkhl password")
-  
-  users.push({
-    name: name,
-    email: email,
-    password: password,
-    balance: 0,
-    history: []
-  })
+);
   alert("signup success!");
+
   console.log(users);
 }
+
