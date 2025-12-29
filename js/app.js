@@ -117,4 +117,5 @@ if (action == 'login') {
             alert("hta passwordat bjoj bhal bhal")
         }
     }
+    let changePass = prompt("ghiti tbdl password");
 }
