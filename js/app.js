@@ -79,10 +79,16 @@ continue;
         continue;
      }
     if (!/[@#\-\+\*\/]/.test(password)) {
-         alert("Password khaso ykoun fih character spisial")
-         continue;
+         alert("Password khaso ykoun fih character mn hado: [@, #, -, +, *, /].")
+         continue; 
+         break;
          }
-    break;
+    let I3ADApASS = prompt("3awd dkhl password ola ghadi tbloka")
+ if (I3ADApASS === password) {
+    alert("nadiii")
+ }else{
+    break
+ }
   }
   users.push({ name, 
     email, 
@@ -91,8 +97,13 @@ continue;
    balance:0,
     history:[]  
 }
-);
-  alert("signup nadiii");
+)
 
+  alert("signup nadiii");
   console.log(users);
+}
+if (action == 'login') {
+    let email ;
+    email = prompt("dkhl email dylk");
+    
 }
