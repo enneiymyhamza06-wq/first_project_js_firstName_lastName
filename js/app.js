@@ -45,7 +45,7 @@ alert("name khaso ykoun kbir mn 5 caracter");
          continue;
          }
     if (!email.includes("@") || email.indexOf("@") !== email.lastIndexOf("@")) { 
-        alert("email khaso ykoun fih @ wahed ghir")
+        alert("email khaso ykoun fih ghir @ wahed")
         continue; 
     }
     if (users.find(u => u.email === email)) {
@@ -54,20 +54,32 @@ alert("name khaso ykoun kbir mn 5 caracter");
         }
     break;
   }
+let age;
+while (true) {
+      age = prompt ("ch7al f 3omrk").trim().Number;
+      if (age == Number) {
+        continue;
+      }
+      if (age != 0 || age > 3) {
+        alert("ach dylk howa: " + age)
+        break
+      }
+     
+}
 
   let password;
   while (true) {
     password = prompt("dkhl password");
-    if (password.includes(" ")) 
-{ 
-alert("Password ma fihch spaces")
+    if (password.includes(" ")){ 
+alert("Password ma fihch space")
 continue;
  }
     if (password.length < 7) { 
         alert("Password khaso >= 7 lettres")
         continue;
      }
-    if (!/[@#\-\+\*\/]/.test(password))  { alert("Password khaso ykoun fih character spisial")
+    if (!/[@#\-\+\*\/]/.test(password)) {
+         alert("Password khaso ykoun fih character spisial")
          continue;
          }
     break;
@@ -75,12 +87,12 @@ continue;
   users.push({ name, 
     email, 
     password,
+    age,
    balance:0,
     history:[]  
 }
 );
-  alert("signup success!");
+  alert("signup nadiii");
 
   console.log(users);
 }
-
