@@ -102,8 +102,19 @@ continue;
   alert("signup nadiii");
   console.log(users);
 }
+action = prompt("What do you want to do? 'signup', 'login', 'change password', or 'exit' ");
+
 if (action == 'login') {
-    let email ;
-    email = prompt("dkhl email dylk");
-    
+    let emaill ;
+    let passwordd;
+    while (true) {
+        emaill = prompt("dkhl email dylk")
+        if (email === emaill) {
+            alert("bhal bhal")
+            continue;
+        }
+        if (passwordd === password) {
+            alert("hta passwordat bjoj bhal bhal")
+        }
+    }
 }
